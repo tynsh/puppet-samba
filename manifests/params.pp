@@ -36,13 +36,7 @@ class samba::params(
           $packagesambapamwinbind = 'libpam-winbind'
           $packagesambaclient     = 'smbclient'
           $servivesambadc         = 'samba-ad-dc'
-          if $facts['os']['name'] == 'Ubuntu' {
-            $servivesmb           = 'smbd'
-          } elsif ($facts['os']['name'] == 'Debian') and ($facts['os']['release']['major'] >= '8') {
-            $servivesmb           = 'smbd'
-          } else {
-            $servivesmb           = 'samba'
-          }
+          $servivesmb             = 'smbd'
           $servivewinbind         = 'winbind'
           $sambacmd               = '/usr/bin/samba-tool'
           $sambaclientcmd         = '/usr/bin/smbclient'
